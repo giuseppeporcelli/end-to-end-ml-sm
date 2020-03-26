@@ -4,6 +4,9 @@ import warnings
 
 import pandas as pd
 import numpy as np
+import tarfile
+
+from sklearn.externals import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.compose import make_column_transformer
@@ -71,3 +74,14 @@ if __name__=='__main__':
     
     print('Saving validation labels to {}'.format(val_labels_output_path))
     pd.DataFrame(y_val).to_csv(val_labels_output_path, header=False, index=False)
+    
+    # Saving model.
+    model_path = os.path.join('/opt/ml/processing/model', 'model.joblib')
+    model_output_path = os.path.join('/opt/ml/processing/model', 'model.tar.gz')
+    
+    print('Saving featurizer model to {}'.format(model_output_path))
+    joblib.dump(featurizer_model, model_path)
+    tar = tarfile.open(model_output_path, "w:gz")
+    tar.add(model_path)
+    tar.close()
+    
