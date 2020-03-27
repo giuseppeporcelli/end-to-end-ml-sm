@@ -9,11 +9,7 @@ from sagemaker_containers.beta.framework import (
 
 from sagemaker_xgboost_container import encoder as xgb_encoders
 
-def input_fn(input_data, content_type):
-    print('Printing inputs.')
-    print(content_type)
-    print(input_data)
-    
+def input_fn(input_data, content_type):    
     if content_type == content_types.JSON:
         obj = json.loads(input_data)
         features = obj['instances'][0]['features']

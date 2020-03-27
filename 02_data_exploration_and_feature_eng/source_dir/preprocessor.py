@@ -82,6 +82,5 @@ if __name__=='__main__':
     print('Saving featurizer model to {}'.format(model_output_path))
     joblib.dump(featurizer_model, model_path)
     tar = tarfile.open(model_output_path, "w:gz")
-    tar.add(model_path)
+    tar.add(model_path, arcname="model.joblib")
     tar.close()
-    

@@ -45,5 +45,5 @@ def output_fn(prediction, accept):
         raise RuntimeException("{} accept type is not supported by this script.".format(accept))
 
 def model_fn(model_dir):
-    preprocessor = joblib.load(os.path.join(model_dir, "opt/ml/processing/model/model.joblib"))
+    preprocessor = joblib.load(os.path.join(model_dir, "model.joblib"))
     return preprocessor
