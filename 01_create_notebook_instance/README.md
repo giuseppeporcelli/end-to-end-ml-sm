@@ -15,7 +15,8 @@ An **Amazon SageMaker notebook instance** is a fully managed ML compute instance
 
 1. In the AWS Management Console, click on Services, type “SageMaker” and press enter.
 	
-	<img src="images/search_sagemaker.png" alt="Search SageMaker" width="700px" />
+	<img src="images/search_sagemaker.png" alt="Search SageMaker" width="700px" />
+
 2. You’ll be placed in the Amazon SageMaker dashboard. Click on **Notebook instances** either in the landing page or in the left menu.
 	
 	<img src="images/sagemaker_dashboard.png" alt="SageMaker dashboard" width="700px" />
@@ -68,7 +69,7 @@ As a consequence, in this section we will clone the GitHub repository into the A
 	cd SageMaker/
 	git clone https://github.com/giuseppeporcelli/end-to-end-ml-sm.git
 	```
-3. When the clone operation completes, close the terminal window and return to the Jupyter landing page. The folder **end-to-end-ml-application** will appear automatically (if not, you can hit the **Refresh** button)
+3. When the clone operation completes, close the terminal window and return to the Jupyter landing page. The folder **end-to-end-ml-sm** will appear automatically (if not, you can hit the **Refresh** button)
 
 	<img src="images/jupyter_cloned_workshop_screen.png" alt="Jupyter Cloned Workshop Screen" width="700px" />
 	
