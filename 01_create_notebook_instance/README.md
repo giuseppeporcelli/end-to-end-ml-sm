@@ -10,41 +10,7 @@ Amazon SageMaker removes the complexity that holds back developer success with e
 
 In this section, we will walk you through creating a fully-managed Jupyter Notebook instance with Amazon SageMaker, that will be used to execute our experimentation and build the Machine Learning model.
 
-## Create an Amazon S3 bucket
-In this section, we will create an Amazon S3 bucket that will be our storage area. Amazon SageMaker and AWS Glue can both use **Amazon S3** as the main storage for both data and artifacts.
-
-1. Sign into the **AWS Management Console** using the Event Engine dashboard at <a href="https://dashboard.eventengine.run" target="_blank">https://dashboard.eventengine.run</a> and **the hashcode provided by the workshop instructors**. [Or access it at <a href="https://console.aws.amazon.com/" target="_blank">https://console.aws.amazon.com/</a> if you are using your own AWS account].
-
-	<img src="images/event_engine_login.png" alt="Event Engine login" width="500px" />
-	
-	<img src="images/event_engine_dashboard.png" alt="Event Engine dashboard" width="500px" />
-	
-	<img src="images/event_engine_console_login.png" alt="Event Engine console login" width="500px" />
-
-2. In the upper-right corner of the AWS Management Console, confirm you are in the desired AWS region. For the instructions of these workshop we will assume using the **EU West (Ireland)** [eu-west-1], but feel free to change the region at your convenience.
-
-	> The only constraints for changing AWS region are that we keep consistent the region settings for all services used and services are available in the selected region (please check in case you plan to execute this workshop in another AWS region).
-
-3. Open the **Amazon S3** console by choosing the Amazon S3 service in the menu.
-4.	In the Amazon S3 console, click the **Create Bucket** button.
-	<img src="images/create_bucket.png" alt="create bucket" width="500px" />
-	
-5.	For the **Bucket Name**, type _endtoendml-workshop-**[your-initials]**_ in the text box and click Next (take note of the bucket name, it will be needed later for loading data in the notebook instance). Press **Next** to move to the next screen.
-
-	> **Note:** if the bucket name is already taken, feel free to add an extra suffix.
-
-	<img src="images/create_bucket_window_1.png" alt="create bucket window 1" width="500px" />
-	
-6. Enable versioning of the objects in the bucket as shown in the screen below. This is not required for the workshop, but it is a suggested best practice to ensure consistency and reproducibility of the experimentations.
-
-	<img src="images/create_bucket_window_2.png" alt="create bucket window 2" width="500px" />
-
-	Press **Next** and then **Next** again leaving the settings as they are in the following screen.
-7. Finally, click **Create Bucket** in the Review page.
-
-
 ## Create a managed Jupyter Notebook instance
-We are now ready to create an Amazon SageMaker managed Jupyter notebook instance.
 An **Amazon SageMaker notebook instance** is a fully managed ML compute instance running the <a href="http://jupyter.org/">**Jupyter Notebook**</a> application. Amazon SageMaker manages creating the instance and related resources. 
 
 1. In the AWS Management Console, click on Services, type “SageMaker” and press enter.
@@ -100,7 +66,7 @@ As a consequence, in this section we will clone the GitHub repository into the A
 
 	```bash
 	cd SageMaker/
-	git clone https://github.com/giuseppeporcelli/end-to-end-ml-application.git
+	git clone https://github.com/giuseppeporcelli/end-to-end-ml-sm.git
 	```
 3. When the clone operation completes, close the terminal window and return to the Jupyter landing page. The folder **end-to-end-ml-application** will appear automatically (if not, you can hit the **Refresh** button)
 
