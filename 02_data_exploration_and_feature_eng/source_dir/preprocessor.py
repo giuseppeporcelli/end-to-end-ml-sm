@@ -2,9 +2,14 @@ import argparse
 import os
 import warnings
 
+import subprocess
+subprocess.call(['pip', 'install', 'sagemaker-experiments'])
+
 import pandas as pd
 import numpy as np
 import tarfile
+
+from smexperiments.tracker import Tracker
 
 from sklearn.externals import joblib
 from sklearn.model_selection import train_test_split
@@ -24,6 +29,10 @@ if __name__=='__main__':
     parser.add_argument('--train-test-split-ratio', type=float, default=0.3)
     args, _ = parser.parse_known_args()
     
+    # Tracking specific parameter value during job.
+    tracker = Tracker.load()
+    tracker.log_parameter('train-test-split-ratio', args.train_test_split_ratio)
+    
     print('Received arguments {}'.format(args))
 
     # Read input data into a Pandas dataframe.
@@ -34,7 +43,10 @@ if __name__=='__main__':
     
     # Replacing certain null values.
     df['turbine_type'] = df['turbine_type'].fillna("HAWT")
+    tracker.log_parameter('default-turbine-type', 'HAWT')
+    
     df['oil_temperature'] = df['oil_temperature'].fillna(37.0)
+    tracker.log_parameter('default-oil-temperature', 37.0)
     
     # Defining one-hot encoders.
     transformer = make_column_transformer(
@@ -84,3 +96,5 @@ if __name__=='__main__':
     tar = tarfile.open(model_output_path, "w:gz")
     tar.add(model_path, arcname="model.joblib")
     tar.close()
+    
+    tracker.close()
