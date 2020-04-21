@@ -71,3 +71,4 @@ The contents of this workshop are licensed under the [Apache 2.0 License](./LICE
 
 [Giuseppe A. Porcelli](https://it.linkedin.com/in/giuporcelli) - Principal, ML Specialist Solutions Architect - Amazon Web Services EMEA<br />
 [Antonio Duma](https://it.linkedin.com/in/antoniod82) - Solutions Architect - Amazon Web Services EMEA
+[Hasan Poonawala](https://www.linkedin.com/in/hasanp) - ML Specialist Solution Architect - Amazon Web Services EMEA <br />
