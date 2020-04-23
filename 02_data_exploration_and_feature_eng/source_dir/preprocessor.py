@@ -36,7 +36,7 @@ if __name__=='__main__':
     print('Received arguments {}'.format(args))
 
     # Read input data into a Pandas dataframe.
-    input_data_path = os.path.join('/opt/ml/processing/input', 'windturbine_raw_data.csv')
+    input_data_path = os.path.join('/opt/ml/processing/input', 'windturbine_raw_data_header.csv')
     print('Reading input data from {}'.format(input_data_path))
     df = pd.read_csv(input_data_path)
     df.columns = columns
