@@ -26,6 +26,16 @@ def model_fn(model_dir):
 def output_fn(prediction, accept):
     
     pred_array_value = np.array(prediction)
-    pred_value = 'yes' if pred_array_value[0] > 0.5 else 'no'
+    score = pred_array_value[0]
     
-    return worker.Response(pred_value, accept, mimetype=accept)
+    if accept == "application/json":
+        predicted_label = 1 if score > 0.5 else 0
+        return_value = {
+            'predictions': [{'score': score.astype(float), 'predicted_label': predicted_label }]
+        }
+        return worker.Response(json.dumps(return_value), mimetype=accept)
+    elif accept == 'text/csv':
+        return_value = 'yes' if score > 0.5 else 'no'
+        return worker.Response(encoders.encode(prediction, accept), mimetype=accept)
+    else:
+        raise RuntimeException("{} accept type is not supported.".format(accept))
