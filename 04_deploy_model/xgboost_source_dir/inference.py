@@ -22,3 +22,10 @@ def model_fn(model_dir):
     model_file = model_dir + '/model.bin'
     model = pkl.load(open(model_file, 'rb'))
     return model
+
+def output_fn(prediction, accept):
+    
+    pred_array_value = np.array(prediction)
+    pred_value = 'yes' if pred_array_value[0] > 0.5 else 'no'
+    
+    return worker.Response(pred_value, accept, mimetype=accept)

@@ -48,7 +48,7 @@ After building the model, we can host it and expose as a REST API that will resp
 
 This workshops consists of six modules:
 
-- <a href="01_create_notebook_instance/">**Module 01**</a> - Creating an Amazon SageMaker managed Jupyter notebook instance.
+- <a href="01_configure_sagemaker_studio/">**Module 01**</a> - Configure Amazon SageMaker Studio and serverless Jupyter notebooks.
 - <a href="02_data_exploration_and_feature_eng/">**Module 02**</a> - Using AWS Glue and Amazon Athena to execute data exploration, and then data preprocessing and feature engineering using Amazon SageMaker Processing and SKLearn.
 - <a href="03_train_model/">**Module 03**</a> - Training a binary classification model with the Amazon SageMaker open-source XGBoost container; the model will predict whether a wind turbine plant requires maintenance. Use Sagemaker Debugger to monitor training progress with rules and visualize training metrics like accuracy and feature importance.
 - <a href="04_deploy_model/">**Module 04**</a> - Deploying the feature engineering and ML models as a pipeline using Amazon SageMaker hosting (inference pipelines). Use Sagemaker Model Monitor to track data drift violations against the training data baseline.
@@ -61,7 +61,7 @@ You must comply with the order of modules, since the outputs of a module are inp
 
 This workshop has been designed assuming that each participant is using an AWS account that has been provided and pre-configured by the workshop instructor(s). However, you can also choose to use your own AWS account, but you'll have to execute some preliminary configuration steps as described <a href="setup/">here</a>.
 
-Once you are ready to go, please start with <a href="01_create_notebook_instance/">**Module 01**</a>.
+Once you are ready to go, please start with <a href="01_configure_sagemaker_studio/">**Module 01**</a>.
 
 ## License
 
