@@ -46,7 +46,7 @@ After building the model, we can host it and expose as a REST API that will resp
 
 ## Modules
 
-This workshops consists of six modules:
+This workshops consists of seven modules:
 
 - <a href="01_configure_sagemaker_studio/">**Module 01**</a> - Open Amazon SageMaker Studio and clone the repository.
 - <a href="02_data_exploration_and_feature_eng/">**Module 02**</a> - Using AWS Glue and Amazon Athena to execute data exploration, and then data preprocessing and feature engineering using Amazon SageMaker Processing and SKLearn.
